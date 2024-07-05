@@ -19,6 +19,7 @@ function ListaCategoria() {
           <CardCategoria dados={n} />
         ))
       }
+            <button className=' h-20 bg-slate-400 rounded-2xl hover:bg-slate-600 hover:text-white ' >Criar outra categoria</button>
     </div>
     </div>
   )
