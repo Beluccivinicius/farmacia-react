@@ -5,16 +5,16 @@ import Categoria from '../../model/Categoria';
 
 function CriarCategoria() {
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     let [categoria, setCategoria] = useState<Categoria>({} as Categoria);
     const { id } = useParams<{ id: string }>();
 
-    // function retornar() {
-    //     navigate("/home")
-    //   }
+    function retornar() {
+        navigate("/")
+      }
 
     async function buscarPorId(id: string) {
-        await buscar(`/categoria/${id}`, setCategoria);
+        await buscar(`/categorias/${id}`, setCategoria);
       }
 
       useEffect(() => {
@@ -40,7 +40,7 @@ function CriarCategoria() {
             await atualizar(`/categorias`, categoria, setCategoria)
     
             alert('Categoria atualizado com sucesso')
-            // retornar()
+            retornar()
           } catch (error: any) {
               alert(error)
             }
@@ -52,7 +52,7 @@ function CriarCategoria() {
               alert('Erro ao cadastrado o Categoria')
             }
           }
-            // retornar()
+            retornar()
         }
     
         return (
